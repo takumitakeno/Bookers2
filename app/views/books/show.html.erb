@@ -35,15 +35,15 @@
       <h2>Book detail</h2>
       <table  class="table table-striped">
         <tbody>
-        <% @books.each do |books| %>
+        
           <tr>
             <th></th>
-            <th><%= books.title %></th>
-            <th><%= books.body %></th>
-            <th><%= link_to "Edit", edit_book_path(books.id) %></th>
-            <th><%= link_to "Dstroy", book_path(books.id), method: :delete, "data-confirm" => "Are you sure?" %></th>
+            <th><%= @book.title %></th>
+            <th><%= @book.body %></th>
+            <th><%= link_to "Edit", edit_book_path(@book.id) %></th>
+            <th><%= link_to "Dstroy", book_path(@book.id), method: :delete, "data-confirm" => "Are you sure?" %></th>
           </tr>
-        <% end %>
+        
         </tbody>
       </table>
       </div>
