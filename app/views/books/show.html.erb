@@ -3,7 +3,8 @@
     <div class="col-lg-3">
       <table class="table">
         <h2>User info</h2>
-        <%= attachment_image_tag @list, :image, :fill, 300, 300, format: 'jpeg' , fallback: "no-image.jpg" %>
+        <h2>画像</h2>
+        <%= attachment_image_tag @list, :image, :fill, 300, 300, format: 'jpeg' %>
         <tbody>
           <tr></tr>
           <tr>
@@ -16,10 +17,6 @@
           </tr>     
         </tbody>
       </table>
-      <div class="row">
-      <%= link_to "", '#' %>
-        <span class="col-xs-12 btn btn-default glyphicon glyphicon-wrench" aria-hidden="true"></span>
-      </div>
     
       <h2>New book</h2>
       <%= form_for(@book) do |book| %>
@@ -36,7 +33,7 @@
 
     </table>
       <div class="col-lg-9">
-      <h2>Books</h2>
+      <h2>Book detail</h2>
       <table  class="table table-striped">
         <thead>
           <tr>
@@ -52,6 +49,8 @@
             <th></th>
             <th><%= books.title %></th>
             <th><%= books.body %></th>
+            <th><%= link_to "Edit", edit_book_path(books.id) %></th>
+            <th><%= link_to "Dstroy", book_path(books.id), method: :delete, "data-confirm" => "Are you sure?" %></th>
           </tr>
         <% end %>
         </tbody>
