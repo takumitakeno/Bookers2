@@ -35,7 +35,7 @@
                 <%= link_to "Home", root_path %>
               </li>
               <li>
-                <%= link_to "About",'#' %>
+                <%= link_to "About", tops_about_path %>
               </li>
               <li class="">
                 <%= link_to "sign in", new_user_registration_path %>
@@ -53,8 +53,12 @@
     
     <footer>
       <div class="container">
-        <p class="text-right">CopyRight Infratop.inc</p>
+        <div class="row">
+          <div class="col-xs-3 col-xs-offset-9">
+            <p class="text-right">CopyRight Infratop.inc</p>
+          </div>
+        </div>
       </div>
-      </footer>
+    </footer>
   </body>
 </html>

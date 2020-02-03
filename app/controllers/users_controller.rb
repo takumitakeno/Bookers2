@@ -5,23 +5,16 @@ class UsersController < ApplicationController
     @books = @user.books
   end
 
-  def index
+  def index 
   	@users = User.all
     @book = Book.new
+    @user = current_user
   end
 
   def edit
   	@user = User.find(params[:id])
 
-  end
-
-  def top
-
-  end
-
-  def about
-
-  end
+  end 
 
   def update
      @user = User.find(params[:id])
@@ -33,8 +26,6 @@ class UsersController < ApplicationController
 
      end
   end
-
-  
 
   private
   def  user_params

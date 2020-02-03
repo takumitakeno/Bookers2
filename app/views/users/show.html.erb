@@ -8,7 +8,7 @@
   <div class="row">   
     <div class="col-lg-3">
       <h2>User info</h2>
-        <%= attachment_image_tag @list, :image, :fill, 300, 300, format: 'jpeg' , fallback: "no-image.jpg" %>
+        <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg' , fallback: "no-image.jpg" %>
       <table class="table">
       	<tbody>
       	  <tr></tr>
@@ -18,7 +18,7 @@
       	  </tr>
       	  <tr>
       	  	<th>introduction</th>
-      	  	<th></th>
+      	  	<th><%= @user.introduction %></th>
       	  </tr>
       	</tbody>
       </table>
@@ -54,13 +54,14 @@
 	        <tbody>
             <% @books.each do |books| %>
           <tr>
-            <th></th>
+            <th>
+              <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg' , fallback: "no-image.jpg" %>
+            </th>
 
             <th>
               <%= link_to book_path(books) do %>
                 <%= books.title %></th>
               <% end %>
-            
             <th><%= books.body %></th>
           </tr>
         <% end %>
