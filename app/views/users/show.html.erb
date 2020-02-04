@@ -1,3 +1,4 @@
+<div class="container">
 <% if flash[:notice] %>
    <div class="flash">
      <%= flash[:notice] %>
@@ -6,7 +7,7 @@
 <!-- showページでプロフィール編集機能を作る -->
 <div class="container"> 
   <div class="row">   
-    <div class="col-lg-3">
+    <div class="col-xs-3">
       <h2>User info</h2>
         <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg' , fallback: "no-image.jpg" %>
       <table class="table">
@@ -40,7 +41,7 @@
       <% end %>
     </div>
 
-    <div class="col-lg-9">
+    <div class="col-xs-9">
       <h2>Books</h2>
         <table  class="table table-hover table-inverse">
 	        <thead>
