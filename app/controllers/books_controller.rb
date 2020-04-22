@@ -6,7 +6,7 @@ class BooksController < ApplicationController
         @user = current_user
         
     end
-
+ 
 	def new
 		@book = Book.new
 	end
@@ -15,12 +15,14 @@ class BooksController < ApplicationController
         @book = Book.new(book_params)
         @book.user_id = current_user.id
         if @book.save
+        binding.pry
         flash[:notice] = "You have creatad book successfully."
         redirect_to book_path(@book)
         else
+
         @user = current_user
         @books =Book.all
-        render :index
+        render template: "items/show"
         end
     end
 
